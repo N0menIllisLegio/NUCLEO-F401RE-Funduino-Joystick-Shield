@@ -55,9 +55,35 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 
+void Print(char *line);
+
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define X_Axis_Pin GPIO_PIN_0
+#define X_Axis_GPIO_Port GPIOA
+#define Y_Axis_Pin GPIO_PIN_1
+#define Y_Axis_GPIO_Port GPIOA
+#define E_Button_Pin GPIO_PIN_10
+#define E_Button_GPIO_Port GPIOB
+#define F_Button_Pin GPIO_PIN_8
+#define F_Button_GPIO_Port GPIOA
+#define F_Button_EXTI_IRQn EXTI9_5_IRQn
+#define Joystick_Button_Pin GPIO_PIN_9
+#define Joystick_Button_GPIO_Port GPIOA
+#define Joystick_Button_EXTI_IRQn EXTI9_5_IRQn
+#define A_Button_Pin GPIO_PIN_10
+#define A_Button_GPIO_Port GPIOA
+#define A_Button_EXTI_IRQn EXTI15_10_IRQn
+#define B_Button_Pin GPIO_PIN_3
+#define B_Button_GPIO_Port GPIOB
+#define B_Button_EXTI_IRQn EXTI3_IRQn
+#define D_Button_Pin GPIO_PIN_4
+#define D_Button_GPIO_Port GPIOB
+#define D_Button_EXTI_IRQn EXTI4_IRQn
+#define C_Button_Pin GPIO_PIN_5
+#define C_Button_GPIO_Port GPIOB
+#define C_Button_EXTI_IRQn EXTI9_5_IRQn
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
