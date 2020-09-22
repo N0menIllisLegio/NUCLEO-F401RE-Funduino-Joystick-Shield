@@ -113,7 +113,6 @@ int main(void)
 	  if (HAL_GPIO_ReadPin(E_Button_GPIO_Port, E_Button_Pin) == GPIO_PIN_RESET)
 	  {
 		  Print("Button E pressed!\n");
-		  HAL_Delay(1000);
 	  }
     /* USER CODE END WHILE */
 
