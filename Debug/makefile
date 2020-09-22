@@ -46,8 +46,8 @@ nucleo-f401re-Joystick-Shield-V1.A.bin \
 all: nucleo-f401re-Joystick-Shield-V1.A.elf secondary-outputs
 
 # Tool invocations
-nucleo-f401re-Joystick-Shield-V1.A.elf: $(OBJS) $(USER_OBJS) /Users/gadfly/STM32CubeIDE/workspace_1.4.0/nucleo-f401re-Joystick-Shield-V1.A/STM32F401RETX_FLASH.ld
-	arm-none-eabi-gcc -o "nucleo-f401re-Joystick-Shield-V1.A.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/gadfly/STM32CubeIDE/workspace_1.4.0/nucleo-f401re-Joystick-Shield-V1.A/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="nucleo-f401re-Joystick-Shield-V1.A.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+nucleo-f401re-Joystick-Shield-V1.A.elf: $(OBJS) $(USER_OBJS) D:\GitHub\joystick\STM32F401RETX_FLASH.ld
+	arm-none-eabi-gcc -o "nucleo-f401re-Joystick-Shield-V1.A.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\GitHub\joystick\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="nucleo-f401re-Joystick-Shield-V1.A.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -122,7 +122,7 @@ int main(void)
 	  	char str[100];
 		snprintf(str, 100, "X: %lu\n Y: %lu\n", JoystickBuffer[0], JoystickBuffer[1]);
 		Print(str);
-		HAL_Delay(5000);
+		HAL_Delay(3000);
   }
   /* USER CODE END 3 */
 }
@@ -200,7 +200,7 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc1.Init.NbrOfConversion = 2;
-  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.DMAContinuousRequests = ENABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
   {
@@ -210,7 +210,7 @@ static void MX_ADC1_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_0;
   sConfig.Rank = 1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;
+  sConfig.SamplingTime = ADC_SAMPLETIME_112CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -331,11 +331,6 @@ static void MX_GPIO_Init(void)
 void Print(char *line)
 {
 	HAL_UART_Transmit(&huart2, (uint8_t *) line, strlen (line), HAL_MAX_DELAY);
-}
-
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
-{
-
 }
 
 /* USER CODE END 4 */
