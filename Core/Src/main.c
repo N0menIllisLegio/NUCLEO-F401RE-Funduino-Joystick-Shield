@@ -103,25 +103,38 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   HAL_ADC_Start_DMA(&hadc1, JoystickBuffer, 2);
+  //snprintf(str, 100, "X: %lu\n Y: %lu\n", JoystickBuffer[0], JoystickBuffer[1]);
 
   /* USER CODE END 2 */
+
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if (HAL_GPIO_ReadPin(E_Button_GPIO_Port, E_Button_Pin) == GPIO_PIN_RESET)
-	  {
-		  Print("Button E pressed!\n");
-	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
 
-	  	char str[100];
-		snprintf(str, 100, "X: %lu\n Y: %lu\n", JoystickBuffer[0], JoystickBuffer[1]);
-		Print(str);
-		HAL_Delay(3000);
+	  if (JoystickBuffer[0] >= 3000)
+	  {
+		  Print("R");
+	  }
+	  else if (JoystickBuffer[0] <= 1000)
+	  {
+		  Print("L");
+	  }
+
+	  if (JoystickBuffer[1] >= 3000)
+	  {
+		  Print("U");
+	  }
+	  else if (JoystickBuffer[1] <= 1000)
+	  {
+		  Print("D");
+	  }
+
+	  HAL_Delay(750);
   }
   /* USER CODE END 3 */
 }
@@ -244,7 +257,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
+  huart2.Init.BaudRate = 9600;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;

@@ -204,7 +204,7 @@ void EXTI3_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI3_IRQn 0 */
 
-	Print("Button B pressed!\n");
+	Print("R");
 
   /* USER CODE END EXTI3_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
@@ -220,7 +220,7 @@ void EXTI4_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI4_IRQn 0 */
 
-	Print("Button D pressed!\n");
+	Print("L");
 
   /* USER CODE END EXTI4_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_4);
@@ -238,11 +238,11 @@ void EXTI9_5_IRQHandler(void)
 
 	if(__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_5))
 	{
-		Print("Button C pressed!\n");
+		Print("D");
 	}
 	else if(__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_8))
 	{
-		Print("Button F pressed!\n");
+		Print("Q");
 	}
 	else if(__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_9))
 	{
@@ -265,7 +265,7 @@ void EXTI15_10_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
 
-	Print("Button A pressed!\n");
+	Print("U");
 
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_10);
